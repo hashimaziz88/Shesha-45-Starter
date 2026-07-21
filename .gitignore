@@ -2,3 +2,23 @@
 .saa-session/
 .saa-work/
 .tmp/
+.playwright-mcp/
+# General
+nul
+.claude/settings.local.json
+
+# Local dev credentials
+.sheshadev.local.json
+
+# Backend build and IDE artifacts
+backend/**/.vs/
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+backend/**/*.suo
+backend/**/*.sln.docstates
+backend/**/TestResults/
+backend/**/_ReSharper*/
+backend/**/.idea/
+backend/**/.vscode/
+backend/**/app_data/
