@@ -4,8 +4,8 @@ import React, { FC, PropsWithChildren } from "react";
 import {
   GlobalStateProvider,
   ShaApplicationProvider,
-  StoredFilesProvider,
   useNextRouter,
+  MonacoLoaderSettings,
 } from "@shesha-io/reactjs";
 import { AppProgressBar } from "next-nprogress-bar";
 import { useTheme } from "antd-style";
@@ -13,6 +13,10 @@ import { useTheme } from "antd-style";
 export interface IAppProviderProps {
   backendUrl: string;
 }
+
+// `shesha init` copies monaco-editor into public/monaco on install, so the code
+// editor loads locally instead of reaching for a CDN.
+const monacoSettings: MonacoLoaderSettings = { localPath: "/monaco/vs" };
 
 export const AppProvider: FC<PropsWithChildren<IAppProviderProps>> = ({
   children,
@@ -28,10 +32,9 @@ export const AppProvider: FC<PropsWithChildren<IAppProviderProps>> = ({
         backendUrl={backendUrl}
         router={nextRouter}
         noAuth={nextRouter.path?.includes('/no-auth')}
+        monaco={monacoSettings}
       >
-        <StoredFilesProvider baseUrl={backendUrl} ownerId={""} ownerType={""}>
-          {children}
-        </StoredFilesProvider>
+        {children}
       </ShaApplicationProvider>
     </GlobalStateProvider>
   );
