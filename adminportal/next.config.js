@@ -56,7 +56,8 @@ const nextConfig = () => {
     poweredByHeader: false,
     productionBrowserSourceMaps: true,
     env,
-    publicRuntimeConfig: env,
+    // publicRuntimeConfig is not supported in the App Router and is removed in Next 16.
+    //publicRuntimeConfig: env,
     compiler: {
       // Remove `console.*` output except `console.error`
       removeConsole: isProd

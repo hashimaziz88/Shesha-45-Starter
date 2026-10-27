@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <SheshaVersion>0.45.0</SheshaVersion>
+    <SheshaVersion>0.46.0</SheshaVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="all" />

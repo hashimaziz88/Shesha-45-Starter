@@ -12,3 +12,9 @@ node_modules/asn1*
 out/
 .DS_Store
 dist/
+
+# shesha init copies monaco-editor here (generated, do not commit)
+public/monaco
+
+# TypeScript incremental build cache (generated)
+*.tsbuildinfo
